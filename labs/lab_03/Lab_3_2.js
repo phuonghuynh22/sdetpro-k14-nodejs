@@ -7,7 +7,7 @@ intArr.filter(sortIntegerArray);
 console.log('Minimum', intArr[0]);
 console.log('Maximum', intArr[intArr.length-1]);
 
-function sortIntegerArray(value, index, array){
+function sortIntegerArray(){
     let unsortedPosition = intArr.length - 1;
     let maxNum = intArr[0];
     

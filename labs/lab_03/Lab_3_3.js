@@ -6,7 +6,7 @@ console.log('Input array: ', intArr);
 intArr.filter(sortIntegerArray);
 console.log('Sorted array:', intArr);
 
-function sortIntegerArray(value, index, array){
+function sortIntegerArray(){
     let unsortedPosition = intArr.length-1;
     let maxNum = intArr[0];
     
