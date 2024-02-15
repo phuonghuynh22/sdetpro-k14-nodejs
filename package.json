@@ -1,0 +1,23 @@
+{
+  "name": "sdetpro-k14-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuonghuynh22/sdetpro-k14-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phuonghuynh22/sdetpro-k14-nodejs/issues"
+  },
+  "homepage": "https://github.com/phuonghuynh22/sdetpro-k14-nodejs#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
