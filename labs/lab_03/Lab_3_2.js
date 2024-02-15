@@ -1,6 +1,10 @@
 // Finding maximum value/minimum value from an integer array
 
-let intArr = [2.7, 0, -3];
+const {
+    sortIntegerArray    
+} = require ('../lab_03/ArrayHelper');
+
+let intArr = [2, 0, -3];
 console.log('Input array: ', intArr);
 
 if (intArr.length < 1) {
@@ -27,21 +31,5 @@ function isIntegerArray() {
         else {
             return false;
         }
-    }
-}
-
-function sortIntegerArray() {
-    let unsortedPosition = intArr.length - 1;
-    let maxNum = intArr[0];
-
-    while (unsortedPosition > 0) {
-        for (let currentIndex = 0; currentIndex < intArr.length; currentIndex++) {
-            if (intArr[currentIndex] > intArr[currentIndex + 1]) {
-                maxNum = intArr[currentIndex];
-                intArr[currentIndex] = intArr[currentIndex + 1];
-                intArr[currentIndex + 1] = maxNum;
-            }
-        }
-        unsortedPosition--;
     }
 }
