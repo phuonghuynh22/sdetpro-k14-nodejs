@@ -28,17 +28,36 @@ console.log(array); //deu ra thong tin Ti
 //-----
 // Shallow copy - spread syntax  => one level
 
-let ti = {...teo}
+var ti = { ...teo }
 ti.name = 'Ti';
 
 console.log(teo); // teo
 console.log(ti);  // ti
 
 
-ti.bankAccount.balance = 1; 
+ti.bankAccount.balance = 1;
 
 console.log(teo); // balance of ti
 console.log(ti);  // balance of ti
 
 // Shallow copy - Handle for nested object, array..(not for function, circular)
-let ti = JSON.parse();
+let tin = JSON.parse(JSON.stringify(teo));
+tin.name = 'Tin';
+tin.bankAccount.balance = 10;
+
+console.log(teo);
+console.log(tin);
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+let merge = [...arr1,...arr2];
+console.log(merge);
+
+// Object.keys(targetObject)
+console.log(Object.keys(tin));
+
+// Object.values(targetObject)
+console.log(Object.values(tin));
+
+// Object.entries(targetObject)
+console.log(Object.entries(tin));
