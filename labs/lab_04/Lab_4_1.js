@@ -18,10 +18,11 @@ clonedAccount.accountNumber = '222';
 clonedAccount.accountName = 'Jennie'
 clonedAccount.balance = 2000;
 
-//let bankAccounts = [originalAccount, clonedAccount];
+let bankAccounts = [originalAccount, clonedAccount];
 
 let isUsing = true;
 let userOption;
+let accNum;
 
 while (isUsing) {
     showMenu();
@@ -52,42 +53,54 @@ function getUserOption() {
 
 function findAccount() {
     let userInput = readline.question('Please input account number: ');
+    let isFound = false;
+    for (let i = 0; i < bankAccounts.length; i++) {
+        accNum = bankAccounts[i];
+        if (userInput === accNum.accountNumber) {
+            console.log('\n Finding...');
+            console.log('Account name: ', accNum.accountNumber);
+            console.log('Balance:', accNum.balance);
+            console.log('\n');
+            isFound = true;
+            return accNum;
+        }
+    }
+    if (isFound === false) {
+        console.log('Account not found!');
 
-    if (userInput === clonedAccount.accountNumber) {
-        console.log('\n Finding...');
-        console.log('Account name: ', clonedAccount.accountName);
-        console.log('Balance:', clonedAccount.balance);
-        console.log('\n');
-    } else {
-        console.log('Account not found! \n');
-        userInput = readline.question('Do you want to find another account? Y/N? ');
-        if (userInput === 'N' || userInput === 'n') {
-            return userOption = '0';
-        } else if (userInput === 'Y' || userInput === 'y') {
-            findAccount();
+    }
+    //isContinue();
+}
+
+function updateBalance() {
+    accNum = findAccount();
+    if (accNum !== undefined) {
+        userInput = readline.question('How much do you want to withdraw? ');
+        if (userInput < 0 || userInput == 0) {
+            console.log('Balance should be greater 0!\n');
+            updateBalance();
+        } else if ((userInput <= accNum.balance)) {
+            accNum.balance = accNum.balance - userInput;
+            console.log('Current balance: ', accNum.balance);
+        } else if (userInput > accNum.balance) {
+            console.log('Current balance is not enough!\n');
+            updateBalance();
         } else {
-            console.log('Wrong answer!\n');
+            console.log('Please check your input!\n');
+            updateBalance();
         }
     }
 }
 
-function updateBalance() {
-    console.log('Account name: ', clonedAccount.accountName);
-    console.log('Balance:', clonedAccount.balance);
-    console.log('\n');
-
-    userInput = readline.question('How much do you want to withdraw? ');
-    if (userInput < 0 || userInput == 0) {
-        console.log('Balance should be greater 0!\n');
-        updateBalance();
-    } else if ((userInput <= clonedAccount.balance)) {
-        clonedAccount.balance = clonedAccount.balance - userInput;
-        console.log('Current balance: ', clonedAccount.balance);
-    } else if (userInput > clonedAccount.balance) {
-        console.log('Current balance is not enough!\n');
-        updateBalance();
+/*
+function isContinue() {
+    userInput = readline.question('Do you want to find another account? Y/N? ');
+    if (userInput === 'N' || userInput === 'n') {
+        return userOption = '0';
+    } else if (userInput === 'Y' || userInput === 'y') {
+        findAccount();
     } else {
-        console.log('Please check your input!\n');
-        updateBalance();
+        console.log('Wrong answer!\n');
     }
 }
+*/
