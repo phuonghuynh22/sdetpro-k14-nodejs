@@ -3,7 +3,7 @@ const readLine = require('readline-sync');
 const address = 'https://jsonplaceholder.typicode.com';
 const slug = '/posts';
 let url = `${address}${slug}`;
-const userID = 43231;
+const userID = 1;
 const postID = 1;
 
 printRequestedPost(userID, postID);
@@ -34,9 +34,13 @@ function printRequestedPost() {
             })[0];
 
             if (requestedPost) {
-                console.log(requestedPost);
+                console.log('\n****************');
+                console.log(`UserID: ${userID}`);
+                console.log(`PostID: ${postID}`);
+                console.log(`Post content: "${requestedPost.body}"`);
+
             } else {
-                console.log(`PostID ${postID} not found!`);
+                console.log(`PostID ${postID} of userID ${userID} is not found!`);
             }
         }
     })
@@ -44,7 +48,10 @@ function printRequestedPost() {
 
 function printAllUserPosts(userID) {
     _getAllPosts(userID).then(function (allUserPosts) {
-        console.log(allUserPosts);
+        if (Object.keys(allUserPosts).length !== 0) {
+            console.log('\n****************');
+            console.log(`All posts of UserID: ${userID}`, allUserPosts);
+        }
     });
 }
 
