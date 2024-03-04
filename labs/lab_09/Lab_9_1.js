@@ -1,5 +1,3 @@
-const readLine = require('readline-sync');
-
 const address = 'https://jsonplaceholder.typicode.com';
 const slug = '/posts';
 let url = `${address}${slug}`;
