@@ -34,7 +34,8 @@ class RequestHandler {
                 post._postId = requestedPost.id;
                 post._title = requestedPost.title;
                 post._body = requestedPost.body;
-                console.log(post);
+
+                console.log(post._body);
             } else {
                 console.log(`PostID ${postId} of userID ${userId} is not found!`);
             }
