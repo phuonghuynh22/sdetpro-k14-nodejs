@@ -1,11 +1,11 @@
 const address = 'https://jsonplaceholder.typicode.com';
 const slug = '/posts';
 let url = `${address}${slug}`;
-const userID = 3;
-const postID = 1;
+const userId = 3;
+const postId = 1;
 
-printRequestedPost(userID, postID);
-printAllUserPosts(userID);
+printRequestedPost(userId, postId);
+printAllUserPosts(userId);
 
 function sendRequest(url) {
     return fetch(url).then(function (response) {
