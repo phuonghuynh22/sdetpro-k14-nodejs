@@ -17,8 +17,7 @@ Research and try to sort employees base on salary, name
 */
 let fteA = new FTE('fte A');
 let ceB = new ContractEmployee('ce B');
-let ceC = new ContractEmployee('ce C');
-let employeeList = [fteA, ceB, ceC];
+let employeeList = [fteA, ceB];
 
 let totalSalary = EmployeeController.calculateTotalSalary(employeeList);
 console.log(`Total salary: ${totalSalary}`);
