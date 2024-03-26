@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/phuonghuynh22/sdetpro-k14-nodejs#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.2",
+    "main": "index.js",
+    "type":"module"
   }
 }

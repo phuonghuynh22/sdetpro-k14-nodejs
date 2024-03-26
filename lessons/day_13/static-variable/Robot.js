@@ -20,7 +20,6 @@ class Robot {
 module.exports = Robot;
 
 const robot1 = new Robot();
-//robot1.doSthing(); // ko goi duoc
 Robot.doSthing();
 const robot2 = new Robot();
 

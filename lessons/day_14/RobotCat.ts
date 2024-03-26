@@ -1,12 +1,11 @@
 export default class RobotCat {
 
     protected name: string;
-    private id: number;
+    protected id: number;
 
 
-    constructor (name: string, id: number){
+    constructor (name: string){
         this.name = name;
-        this.id = id;
     }
 
     // setter: change current value of a property to a new one

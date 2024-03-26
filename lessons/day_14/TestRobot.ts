@@ -8,8 +8,8 @@ import SolarRobotCat from "./SolarRobotCat";
 //console.log(robotCat.name);
 
 
-const solarRobotCat = new SolarRobotCat();
-solarRobotCat.getId = 2;
-const batterRobotCat = new BatteryRobotCat('Battery', 2);
+const solarRobotCat = new SolarRobotCat(1);
+//solarRobotCat.getId = 2;
+const batterRobotCat = new BatteryRobotCat('Battery');
 
 charge([solarRobotCat, batterRobotCat]);
