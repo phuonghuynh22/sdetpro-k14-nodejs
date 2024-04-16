@@ -23,4 +23,3 @@ let totalSalary = EmployeeController.calculateTotalSalary(employeeList);
 console.log(`Total salary: ${totalSalary}`);
 let highestSalary =  EmployeeController.highestSalary(employeeList);
 console.log(highestSalary);
-

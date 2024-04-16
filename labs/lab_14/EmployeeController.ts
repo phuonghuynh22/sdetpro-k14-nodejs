@@ -22,4 +22,3 @@ export default class EmployeeController {
         return `${emp} has the highest salary ${highestSalary}`;
     }
 }
-
